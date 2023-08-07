@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 31, 2023 lúc 03:42 AM
+-- Thời gian đã tạo: Th8 07, 2023 lúc 04:06 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.0.28
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `shopgame`
+-- Cơ sở dữ liệu: `shoptoys`
 --
 
 -- --------------------------------------------------------
@@ -40,8 +40,7 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id`, `quantity`, `user_id`, `created_at`, `updated_at`) VALUES
-(9, 1, 3, '2023-07-18 06:35:18', '2023-07-18 06:35:18'),
-(10, 1, 1, '2023-07-29 06:10:22', '2023-07-29 06:10:22');
+(1, 1, 1, '2023-08-06 18:13:11', '2023-08-06 18:13:11');
 
 -- --------------------------------------------------------
 
@@ -64,9 +63,7 @@ CREATE TABLE `cart_product` (
 --
 
 INSERT INTO `cart_product` (`id`, `quantity`, `price`, `cart_id`, `product_id`, `created_at`, `updated_at`) VALUES
-(2, 2, 65.00, 9, 10, '2023-07-18 06:35:18', '2023-07-18 06:35:26'),
-(7, 1, 1.00, 10, 9, '2023-07-29 06:24:39', '2023-07-29 06:24:39'),
-(9, 1, 1.00, 10, 6, '2023-07-30 05:38:14', '2023-07-30 05:38:14');
+(1, 1, 1.00, 1, 2, '2023-08-06 18:13:11', '2023-08-06 18:13:11');
 
 -- --------------------------------------------------------
 
@@ -87,15 +84,7 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'RPG', 'game', '2023-07-11 17:49:19', '2023-07-11 17:49:19'),
-(2, 'Action', 'Games that emphasize physical challenges, reflexes, and hand-eye coordination, often involving combat or intense gameplay', '2023-07-11 19:48:23', '2023-07-11 19:48:23'),
-(3, 'Adventure', 'Games that involve exploration, puzzle-solving, and narrative-driven experiences', '2023-07-11 19:48:46', '2023-07-11 19:48:46'),
-(4, 'Sports', 'Games that simulate or involve various sports activities, including team sports, individual sports, and racing', '2023-07-11 19:49:07', '2023-07-11 19:49:07'),
-(5, 'Puzzle', 'Games that challenge players\' problem-solving skills and logical thinking through puzzles or brainteasers', '2023-07-11 19:49:22', '2023-07-11 19:49:22'),
-(6, 'Platformer', 'Games that involve controlling a character to navigate platforms, obstacles, and enemies, often in a side-scrolling environment', '2023-07-11 19:49:37', '2023-07-11 19:49:37'),
-(7, 'Simulation', 'Games that simulate real-world or fictional activities, such as driving, flying, building cities, managing businesses, or controlling virtual lives', '2023-07-11 19:49:53', '2023-07-11 19:49:53'),
-(8, 'Fighting', 'Games that focus on one-on-one or multiplayer combat, usually involving martial arts, special moves, and combos', '2023-07-11 19:50:09', '2023-07-11 19:50:09'),
-(9, 'FPS', 'Games that simulate combat from the perspective of the player character, often involving firearms and fast-paced action', '2023-07-11 19:50:30', '2023-07-11 19:50:30');
+(1, 'Action Figures', 'Small figurines representing characters from movies, TV shows, comic books, or video games, often with movable joints for posing and imaginative play.', '2023-08-06 18:05:42', '2023-08-06 18:05:42');
 
 -- --------------------------------------------------------
 
@@ -116,24 +105,8 @@ CREATE TABLE `category_product` (
 --
 
 INSERT INTO `category_product` (`id`, `product_id`, `category_id`, `created_at`, `updated_at`) VALUES
-(5, 5, 1, NULL, NULL),
-(6, 6, 4, NULL, NULL),
-(7, 7, 2, NULL, NULL),
-(8, 7, 3, NULL, NULL),
-(9, 7, 8, NULL, NULL),
-(10, 8, 2, NULL, NULL),
-(11, 8, 8, NULL, NULL),
-(12, 9, 2, NULL, NULL),
-(13, 9, 6, NULL, NULL),
-(14, 9, 7, NULL, NULL),
-(15, 9, 8, NULL, NULL),
-(16, 10, 1, NULL, NULL),
-(17, 10, 2, NULL, NULL),
-(18, 10, 3, NULL, NULL),
-(19, 10, 8, NULL, NULL),
-(23, 12, 1, NULL, NULL),
-(24, 12, 2, NULL, NULL),
-(25, 12, 3, NULL, NULL);
+(1, 1, 1, NULL, NULL),
+(2, 2, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -154,28 +127,12 @@ CREATE TABLE `image` (
 --
 
 INSERT INTO `image` (`id`, `image`, `product_id`, `created_at`, `updated_at`) VALUES
-(13, '1689123329_assassins-creed-1280x720-11786.jpeg', 5, '2023-07-11 17:55:29', '2023-07-11 17:55:29'),
-(14, '1689123329_assassins-creed-1280x720-11788.jpeg', 5, '2023-07-11 17:55:29', '2023-07-11 17:55:29'),
-(15, '1689123329_assassins-creed-1280x720-11785.jpeg', 5, '2023-07-11 17:55:29', '2023-07-11 17:55:29'),
-(16, '1689123329_assassins-creed-1280x720-11790.jpeg', 5, '2023-07-11 17:55:29', '2023-07-11 17:55:29'),
-(17, '1689132808_cristiano-ronaldo-1280x720-9595.jpg', 6, '2023-07-11 20:33:28', '2023-07-11 20:33:28'),
-(18, '1689132808_fifa-23-paris-saint-germain-kylian-mbappe-french-footballer-1280x720-8720.jpg', 6, '2023-07-11 20:33:28', '2023-07-11 20:33:28'),
-(19, '1689132808_trent-alexander-arnold-fifa-22-pc-games-footballer-1280x720-6016.jpg', 6, '2023-07-11 20:33:28', '2023-07-11 20:33:28'),
-(20, '1689132866_avatar-frontiers-of-1280x720-11752.jpg', 7, '2023-07-11 20:34:26', '2023-07-11 20:34:26'),
-(21, '1689132866_avatar-frontiers-of-1280x720-11765.jpeg', 7, '2023-07-11 20:34:26', '2023-07-11 20:34:26'),
-(22, '1689132866_avatar-frontiers-of-1280x720-11772.jpg', 7, '2023-07-11 20:34:26', '2023-07-11 20:34:26'),
-(23, '1689132940_marvels-guardians-of-the-galaxy-peter-quill-star-lord-2021-1280x720-6576.jpg', 8, '2023-07-11 20:35:40', '2023-07-11 20:35:40'),
-(24, '1689132940_star-lord-marvels-1280x720-11779.jpeg', 8, '2023-07-11 20:35:40', '2023-07-11 20:35:40'),
-(25, '1689132940_star-lord-marvels-guardians-of-the-galaxy-pc-games-1280x720-7697.jpg', 8, '2023-07-11 20:35:40', '2023-07-11 20:35:40'),
-(26, '1689133021_marvels-spider-man-1280x720-9849.jpg', 9, '2023-07-11 20:37:01', '2023-07-11 20:37:01'),
-(27, '1689133021_marvels-spider-man-1280x720-11808.jpeg', 9, '2023-07-11 20:37:01', '2023-07-11 20:37:01'),
-(28, '1689133021_marvels-spider-man-1280x720-11811.jpeg', 9, '2023-07-11 20:37:01', '2023-07-11 20:37:01'),
-(29, '1689133161_clive-rosfield-1280x720-9681.jpg', 10, '2023-07-11 20:39:21', '2023-07-11 20:39:21'),
-(30, '1689133161_clive-rosfield-1280x720-11299.jpg', 10, '2023-07-11 20:39:21', '2023-07-11 20:39:21'),
-(31, '1689133161_final-fantasy-xvi-1280x720-11304.jpg', 10, '2023-07-11 20:39:21', '2023-07-11 20:39:21'),
-(35, '1690366427_avatar-frontiers-of-1280x720-11752.jpg', 12, '2023-07-26 03:13:47', '2023-07-26 03:13:47'),
-(36, '1690366427_avatar-frontiers-of-1280x720-11765.jpeg', 12, '2023-07-26 03:13:47', '2023-07-26 03:13:47'),
-(37, '1690366427_avatar-frontiers-of-1280x720-11772.jpg', 12, '2023-07-26 03:13:47', '2023-07-26 03:13:47');
+(1, '1691370459_5d97fc7aeb442f23f2f062257403bad4.jpg_720x720q80.jpg', 1, '2023-08-06 18:07:39', '2023-08-06 18:07:39'),
+(2, '1691370459_61-SCG3rcbL._AC_UF894,1000_QL80_.jpg', 1, '2023-08-06 18:07:39', '2023-08-06 18:07:39'),
+(3, '1691370459_zoro.jpg', 1, '2023-08-06 18:07:39', '2023-08-06 18:07:39'),
+(4, '1691370606_FF7_BA_CLOUD_01__25305.jpg', 2, '2023-08-06 18:10:06', '2023-08-06 18:10:06'),
+(5, '1691370606_images (1).jpg', 2, '2023-08-06 18:10:06', '2023-08-06 18:10:06'),
+(6, '1691370606_images.jpg', 2, '2023-08-06 18:10:06', '2023-08-06 18:10:06');
 
 -- --------------------------------------------------------
 
@@ -194,25 +151,79 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(32, '2023_06_14_114047_create_role_table', 1),
-(33, '2014_10_12_000000_create_users_table', 2),
-(34, '2023_06_14_114308_create_publisher_table', 3),
-(35, '2023_06_13_181112_create_news_table_product', 4),
-(36, '2023_06_13_180950_create_news_table_category', 5),
-(37, '2023_06_14_114331_create_category_product_table', 6),
-(38, '2023_06_14_114118_create_cart_table', 7),
-(39, '2023_06_14_114157_create_cart_product_table', 8),
-(40, '2023_06_14_113849_create_image_table', 9),
-(41, '2023_06_14_114130_create_order_table', 10),
-(42, '2023_06_14_114149_create_order_product_table', 11);
+(1, '2023_06_14_114047_create_role_table', 1),
+(2, '2014_10_12_000000_create_users_table', 2),
+(3, '2023_06_14_114308_create_publisher_table', 3),
+(4, '2023_06_13_181112_create_news_table_product', 4),
+(5, '2014_10_12_100000_create_password_resets_table', 5),
+(6, '2019_12_14_000001_create_personal_access_tokens_table', 5),
+(7, '2023_06_13_180950_create_news_table_category', 5),
+(8, '2023_06_14_113849_create_image_table', 5),
+(9, '2023_06_14_113936_create__review_table', 5),
+(10, '2023_06_14_114118_create_cart_table', 5),
+(11, '2023_06_14_114130_create_order_table', 5),
+(12, '2023_06_14_114149_create_order_product_table', 5),
+(13, '2023_06_14_114157_create_cart_product_table', 5),
+(14, '2023_06_14_114331_create_category_product_table', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `order`
+--
+
+CREATE TABLE `order` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `order_product`
+--
+
+CREATE TABLE `order_product` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
 -- Cấu trúc bảng cho bảng `password_resets`
 --
--- Error reading structure for table shopgame.password_resets: #1932 - Table 'shopgame.password_resets' doesn't exist in engine
--- Error reading data for table shopgame.password_resets: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `shopgame`.`password_resets`' at line 1
+
+CREATE TABLE `password_resets` (
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `personal_access_tokens`
+--
+
+CREATE TABLE `personal_access_tokens` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `tokenable_type` varchar(255) NOT NULL,
+  `tokenable_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `token` varchar(64) NOT NULL,
+  `abilities` text DEFAULT NULL,
+  `last_used_at` timestamp NULL DEFAULT NULL,
+  `expires_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -235,13 +246,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `description`, `price`, `publisher_id`, `created_at`, `updated_at`) VALUES
-(5, 'assassin creed', 'daaaa', 60.00, 1, '2023-07-11 17:55:29', '2023-07-11 17:55:29'),
-(6, 'FIFA', 'game football', 60.00, 2, '2023-07-11 20:33:28', '2023-07-11 20:33:28'),
-(7, 'Avarta', 'gameaaa', 60.00, 4, '2023-07-11 20:34:26', '2023-07-11 20:34:26'),
-(8, 'star lord', 'game marvel', 60.00, 4, '2023-07-11 20:35:40', '2023-07-11 20:35:40'),
-(9, 'spider-man', 'game marvel', 34.00, 4, '2023-07-11 20:37:01', '2023-07-11 20:37:01'),
-(10, 'final fantasy 16', 'dffas', 65.00, 4, '2023-07-11 20:39:21', '2023-07-11 20:39:21'),
-(12, 'game2', 'new product', 12.00, 2, '2023-07-26 03:13:47', '2023-07-26 03:13:47');
+(1, 'Zoro', 'good', 12.00, 1, '2023-08-06 18:07:39', '2023-08-06 18:07:39'),
+(2, 'FNFS', 'sdasd', 12.00, 1, '2023-08-06 18:10:06', '2023-08-06 18:10:06');
 
 -- --------------------------------------------------------
 
@@ -262,12 +268,7 @@ CREATE TABLE `publisher` (
 --
 
 INSERT INTO `publisher` (`id`, `name`, `country`, `created_at`, `updated_at`) VALUES
-(1, 'Ubsoft', 'usa', '2023-07-11 17:49:33', '2023-07-11 17:49:33'),
-(2, 'EA', 'USA', '2023-07-11 20:16:56', '2023-07-11 20:16:56'),
-(3, 'Microsoft', 'usa', '2023-07-11 20:17:43', '2023-07-11 20:17:43'),
-(4, 'Sony', 'japan', '2023-07-11 20:18:00', '2023-07-11 20:18:00'),
-(5, 'Nintendo', 'japan', '2023-07-11 20:18:14', '2023-07-11 20:18:14'),
-(6, 'Netease', 'china', '2023-07-11 20:18:31', '2023-07-11 20:18:31');
+(1, 'Mykingdom', 'VN', '2023-08-06 17:51:57', '2023-08-06 17:51:57');
 
 -- --------------------------------------------------------
 
@@ -316,10 +317,23 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `country`, `numberphone`, `email`, `email_verified_at`, `password`, `role_id`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'HN', 1234567889, 'datbv2003@gmail.com', NULL, '$2y$10$aLVfUP4c4ROpkFeeur0xtuiE9GRrP3RxPnf4BJ2CRcWx6I0uMzB7S', 3, NULL, NULL, '2023-07-29 07:06:36'),
-(3, 'ledat23', 'hn', 123456789, 'user1@gmail.com', NULL, '$2y$10$uosb2m5H.BsJzpRhhbygnO/j4kMGc48smCS3aGY2PffIyTaDiGZme', 2, NULL, NULL, NULL),
-(5, 'admin2', 'HN', 123456789, 'email3@gmail.com', NULL, '$2y$10$3YeaSTHawmQ88Y/bCozv1u.Mxnif4AyTswkGemN.MpYqwA7QR4jcG', 1, NULL, NULL, NULL),
-(6, 'game3', 'HN', 1234567889, 'user2@gmail.com', NULL, '$2y$10$7.chaYgo1FNR8JBI7ZpFku.JUxWpwfjDGd7l0SexdIer/D6KGyIsO', 2, NULL, NULL, NULL);
+(1, 'ledat', 'HN', 1234567889, 'datbv2003@gmail.com', NULL, '$2y$10$1flew1F6uxq1wRNTYYDY/e9eWGw5HeokAttyb1CmoLtKmz3pMAj0K', 1, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `_review`
+--
+
+CREATE TABLE `_review` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `rating_value` int(11) NOT NULL,
+  `review_text` text DEFAULT NULL,
+  `product_id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -368,6 +382,34 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `order`
+--
+ALTER TABLE `order`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `order_user_id_foreign` (`user_id`);
+
+--
+-- Chỉ mục cho bảng `order_product`
+--
+ALTER TABLE `order_product`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `order_product_user_id_foreign` (`user_id`);
+
+--
+-- Chỉ mục cho bảng `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD PRIMARY KEY (`email`);
+
+--
+-- Chỉ mục cho bảng `personal_access_tokens`
+--
+ALTER TABLE `personal_access_tokens`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
+  ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
+
+--
 -- Chỉ mục cho bảng `product`
 --
 ALTER TABLE `product`
@@ -395,6 +437,14 @@ ALTER TABLE `users`
   ADD KEY `users_role_id_foreign` (`role_id`);
 
 --
+-- Chỉ mục cho bảng `_review`
+--
+ALTER TABLE `_review`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `_review_product_id_foreign` (`product_id`),
+  ADD KEY `_review_user_id_foreign` (`user_id`);
+
+--
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
 
@@ -402,49 +452,67 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `cart_product`
 --
 ALTER TABLE `cart_product`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `category_product`
 --
 ALTER TABLE `category_product`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `image`
 --
 ALTER TABLE `image`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT cho bảng `order`
+--
+ALTER TABLE `order`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `order_product`
+--
+ALTER TABLE `order_product`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `personal_access_tokens`
+--
+ALTER TABLE `personal_access_tokens`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `publisher`
 --
 ALTER TABLE `publisher`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `role`
@@ -456,7 +524,13 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT cho bảng `_review`
+--
+ALTER TABLE `_review`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -489,6 +563,18 @@ ALTER TABLE `image`
   ADD CONSTRAINT `image_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`);
 
 --
+-- Các ràng buộc cho bảng `order`
+--
+ALTER TABLE `order`
+  ADD CONSTRAINT `order_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+--
+-- Các ràng buộc cho bảng `order_product`
+--
+ALTER TABLE `order_product`
+  ADD CONSTRAINT `order_product_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+--
 -- Các ràng buộc cho bảng `product`
 --
 ALTER TABLE `product`
@@ -499,6 +585,13 @@ ALTER TABLE `product`
 --
 ALTER TABLE `users`
   ADD CONSTRAINT `users_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`);
+
+--
+-- Các ràng buộc cho bảng `_review`
+--
+ALTER TABLE `_review`
+  ADD CONSTRAINT `_review_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
+  ADD CONSTRAINT `_review_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
