@@ -178,15 +178,23 @@ class ProductController extends Controller
 
     public function destroy($id)
     {
-        $product = Product::find($id);
-        if (!$product) {
-            return redirect()->route('product.index')->with('error', 'Product not found');
+        DB::beginTransaction();
+
+        try {
+            $product = Product::find($id);
+    
+            if (!$product) {
+                return redirect()->route('product.index')->with('error', 'Product not found');
+            }
+            Image::where('product_id', $id)->delete();
+            CartProduct::where('product_id', $id)->delete();
+            $product->delete();
+            DB::commit();
+            return redirect()->route('product.index')->with('success', 'Product deleted successfully');
+        } catch (\Exception $e) {
+            DB::rollback();
+            return redirect()->route('product.index')->with('error', 'Failed to delete product');
         }
-        Image::where('product_id', $id)->delete();
-        CartProduct::where('product_id', $id)->delete();
-        $product->delete();
-        return redirect()->route('product.index')
-            ->with('success', 'Game deleted successfully');
     }
 
 }

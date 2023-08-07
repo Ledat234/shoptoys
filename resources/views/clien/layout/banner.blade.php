@@ -39,7 +39,7 @@
                 </div><!-- End .intro-content -->
             </div><!-- End .intro-slide -->
 
-            <div class="intro-slide" style="background-image: url(https://images8.alphacoders.com/131/1311910.jpg);">
+            <div class="intro-slide" style="background-image: url(https://janbox.com/blog/wp-content/uploads/2022/03/mua-figure-naruto.jpg);">
                 <div class="container intro-content">
                     <div class="row justify-content-end">
                         <div class="col-auto col-sm-7 col-md-6 col-lg-5">
