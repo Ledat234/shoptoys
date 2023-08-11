@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\CategoryProduct;
 use App\Models\Image;
 use Illuminate\Support\Facades\DB;
 use App\Models\Publisher;
@@ -177,24 +178,16 @@ class ProductController extends Controller
     }
 
     public function destroy($id)
-    {
-        DB::beginTransaction();
-
-        try {
-            $product = Product::find($id);
-    
-            if (!$product) {
-                return redirect()->route('product.index')->with('error', 'Product not found');
-            }
-            Image::where('product_id', $id)->delete();
-            CartProduct::where('product_id', $id)->delete();
-            $product->delete();
-            DB::commit();
-            return redirect()->route('product.index')->with('success', 'Product deleted successfully');
-        } catch (\Exception $e) {
-            DB::rollback();
-            return redirect()->route('product.index')->with('error', 'Failed to delete product');
+    { $product = Product::find($id);
+        if (!$product) {
+            return redirect()->route('product.index')->with('error', 'Product not found');
         }
+        CartProduct::where('product_id', $id)->delete();
+        CategoryProduct::where('product_id', $id)->delete();
+        Image::where('product_id', $id)->delete();
+        $product->delete();
+        return redirect()->route('product.index')
+            ->with('success', 'Game deleted successfully');
     }
 
 }
